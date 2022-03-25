@@ -1,0 +1,13 @@
+strict digraph "dependency-cruiser output"{
+    ordering="out" rankdir="LR" splines="true" overlap="false" nodesep="0.16" ranksep="0.18" fontname="Helvetica-bold" fontsize="9" style="rounded,bold,filled" fillcolor="#ffffff" compound="true"
+    node [shape="box" style="rounded, filled" height="0.2" color="black" fillcolor="#ffffcc" fontcolor="black" fontname="Helvetica" fontsize="9"]
+    edge [arrowhead="normal" arrowsize="0.6" penwidth="2.0" color="#00000033" fontname="Helvetica" fontsize="9"]
+
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/bear" {label="bear" "src/components/bear/bear.jsx" [label=<bear.jsx> tooltip="bear.jsx" URL="src/components/bear/bear.jsx" fillcolor="#ffff77"] } } }
+    "src/components/bear/bear.jsx" -> "src/components/bear/bear.styled.jsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/bear" {label="bear" "src/components/bear/bear.styled.jsx" [label=<bear.styled.jsx> tooltip="bear.styled.jsx" URL="src/components/bear/bear.styled.jsx" fillcolor="#ffff77"] } } }
+    "src/components/bear/bear.styled.jsx" -> "src/components/bear/images/bear-wave.png"
+    "src/components/bear/bear.styled.jsx" -> "src/components/bear/images/bear.png"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/bear" {label="bear" subgraph "cluster_src/components/bear/images" {label="images" "src/components/bear/images/bear-wave.png" [label=<bear-wave.png> tooltip="bear-wave.png" URL="src/components/bear/images/bear-wave.png" ] } } } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/bear" {label="bear" subgraph "cluster_src/components/bear/images" {label="images" "src/components/bear/images/bear.png" [label=<bear.png> tooltip="bear.png" URL="src/components/bear/images/bear.png" ] } } } }
+}
