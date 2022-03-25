@@ -15,13 +15,15 @@
     "styled-components": "5.1.0"
   },
   "devDependencies": {
+    "dependency-cruiser": "^11.4.1",
     "typescript": "3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "depcruise:src": "depcruise --include-only \"^src\" --output-type dot src > .tmp_src_imports.dot"
   },
   "browserslist": [
     ">0.2%",
